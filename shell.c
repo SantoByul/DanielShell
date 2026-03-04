@@ -10,7 +10,7 @@ int main(){
 
     while (1){
         printf("DanielShell> ");
-        fgets(comando,sizeof(comando),stdin);y
+        fgets(comando,sizeof(comando),stdin);
 
         comando[strcspn(comando,"\n")] = 0;
 
