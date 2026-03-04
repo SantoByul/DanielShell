@@ -6,15 +6,19 @@
 #include <unistd.h>
 
 int main(){
-    char comando[1024];
+    pid_t pid_code;
+    int n=20;
 
-    while (1){
-        printf("DanielShell> ");
-        fgets(comando,sizeof(comando),stdin);
+    pid_code = fork();
 
-        comando[strcspn(comando,"\n")] = 0;
-
-        system(comando);
+    if(pid_code < 0){
+        printf("Ish rapaz deu erro");
+        exit();
+    }else if(pid_code==0){
+        n=10;
+        printf("n-filho =%d\n",n);
+    }else if(pid_code>0){
+        printf("n-pai =%d\n",n);
     }
     return 0;
 }
