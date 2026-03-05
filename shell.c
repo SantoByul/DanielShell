@@ -8,5 +8,15 @@
 #include <sys/wait.h>
 
 int main(){
+    char comand[1024];
+
+    while (1){
+        printf("DanielShell> ");
+        fgets(comand,1024,stdin);
+        if(strcmp(comand,"exit\n")==0){
+            break;
+        }
+    }
+
     return 0;
 }
