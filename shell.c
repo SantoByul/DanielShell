@@ -13,6 +13,10 @@ int main(){
     while (1){
         printf("DanielShell> ");
         fgets(comand,1024,stdin);
+
+        comand[strcspn(comand,"\n")]==0
+
+
         if(strcmp(comand,"exit\n")==0){
             break;
         }
